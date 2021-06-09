@@ -1,0 +1,48 @@
+body {
+    font-family: 'Baloo Tammudu 2', cursive;
+    line-height: 25px;
+    font-size: 18px;
+    background-color: rgb(245, 240, 230);
+}
+
+header {
+    font-size: x-large;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    padding: 20px;
+    background-color: #beb59c;
+    height: 100%;
+}
+
+main {
+    position: relative;
+    padding-top: 10px;
+    margin-left: 300px;
+    margin-right: 20px;
+}
+
+#title {
+    color: rgb(58, 38, 1);
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    padding: 20px;
+    color: rgb(48, 26, 1);
+}
+
+.nav-link:hover {
+    color: rgb(145, 106, 1);
+    border: 3px solid;
+}
+
+.main-section {
+    padding-top: 80px;
+}

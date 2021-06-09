@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation HTTP</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <nav id="navbar">
+        <header id="title">
+            HTTP Documentation
+        </header>
+        <a class="nav-link" href="#what_is_http?">What is HTTP?</a>
+        <a class="nav-link" href="#how_it_works?">How It Works?</a>
+        <a class="nav-link" href="#messages">Messages</a>
+        <a class="nav-link" href="#APIs">APIs</a>
+        <a class="nav-link" href="#cookies">Cookies</a>
+        <a class="nav-link" href="#conclusion">Conclusion</a>
+
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="what_is_http?">
+            <header>
+                What is HTTP?
+            </header>
+            <p>HTTP stands for <strong>Hypertext Transfer Protocol</strong>.</p>
+            <p>We all know that in order to have some kind of information exchange
+                and understanding we need to have some basic rules or <i>protocol </i>  in which we all use the same 
+                parameters to communicate properly. This is why HTTP was developed, it is based on the WWW (World Wide Web) and the WWW is based on the internet.
+            </p>
+            <p>HTTP uses the client-server communication model, this means that the client (user) request access to information store in a server then the server give you access and now you have an open communication with a server</p>
+        </section>
+        <section class="main-section" id="how_it_works?">
+            <header>How It Works?</header>
+            <p>The client (browser) sends a <strong>request</strong> and the server <strong>respond</strong> with the appropriate answer</p>
+            <br>
+            <img height="400px" src="https://media.prod.mdn.mozit.cloud/attachments/2016/08/09/13673/6d339b54f6873b97728986a2d9d930dd/HTTP%20%26%20layers.png" alt="image from mozilla.org">
+            <br>
+            <p>Let's see the flow of HTTP:</p>
+            <ol>
+                <li>Open a TCP connection</li>
+                <li>Send an HTTP message</li>
+                <li>Read the response sent by the server</li>
+                <li>Reuse the connection for another request or close it</li>
+            </ol>
+        </section>
+        <section class="main-section" id="messages">
+            <header>Messages</header>
+            <p>There are 2 types of messages: Request and Response. Each one has its own structure</p>
+            <h3>Request:</h3>
+            <img height="300px" src="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview/http_request.png" alt="request image">
+            <ul>
+                <li>Method</li>
+                <li>Path to fetch</li>
+                <li>Version of HTTP</li>
+                <li>Headers</li>
+            </ul>
+            <h3>Response:</h3>
+            <img src="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview/http_response.png" alt="Response image">
+            <ul>
+                <li>The version of the HTTP protocol they follow.</li>
+                <li>A status code, indicating if the request was successful, or not, and why.</li>
+                <li>A status message, a non-authoritative short description of the status code.</li>
+                <li>HTTP headers, like those for requests.</li>
+            </ul>
+        </section>
+        <section class="main-section" id="APIs">
+            <header>APIs</header>
+            <p>The most commonly used API based on HTTP is the XMLHttpRequest API, which can be used to exchange data between a user agent and a server. The modern Fetch API provides the same features with a more powerful and flexible feature set.</p>
+
+            <p>Another API, server-sent events, is a one-way service that allows a server to send events to the client, using HTTP as a transport mechanism. Using the EventSource interface, the client opens a connection and establishes event handlers. The client browser automatically converts the messages that arrive on the HTTP stream into appropriate Event objects, delivering them to the event handlers that have been registered for the events' type if known, or to the onmessage event handler if no type-specific event handler was established.</p>
+        </section>
+        <section class="main-section" id="conclusion">
+            <header>Conclusion</header>
+            <p>HTTP is an extensible protocol that is easy to use. The client-server structure, combined with the ability to add headers, allows HTTP to advance along with the extended capabilities of the Web.</p>
+        </section>
+        <section class="main-section" id="cookies">
+            <header> Cookies </header>
+            <p>An HTTP cookie (web cookie, browser cookie) is a small piece of data that a server sends to the user's web browser. The browser may store it and send it back with later requests to the same server. Typically, it's used to tell if two requests came from the same browser — keeping a user logged-in, for example. It remembers stateful information for the stateless HTTP protocol.</p>
+
+            <p>We can set a cookie:</p>
+            <code>Set-Cookie: &ltcookie-name>=&ltcookie-value></code>
+            <br>
+            <p></p>
+            <code>HTTP/2.0 200 OK
+                Content-Type: text/html
+                Set-Cookie: yummy_cookie=choco
+                Set-Cookie: tasty_cookie=strawberry
+                
+                [page content]</code>
+
+            <code>GET /sample_page.html HTTP/2.0
+                Host: www.example.org
+                Cookie: yummy_cookie=choco; tasty_cookie=strawberry</code>
+
+            <p>Define the lifetime of a cookie</p>
+            <code>Set-Cookie: id=a3fWa; Expires=Thu, 31 Oct 2021 07:28:00 GMT;</code>
+
+            <p>Restrict access to cookies</p>
+            <code>Set-Cookie: id=a3fWa; Expires=Thu, 21 Oct 2021 07:28:00 GMT; Secure; HttpOnly</code>
+        </section>
+        <p>Find more information <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview"> here. </a></p>
+    </main>
+    
+</body>
+</html>
